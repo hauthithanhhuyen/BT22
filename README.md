@@ -37,10 +37,61 @@ Cài a1-nodered để chạy
 # 2.3. Tạo csdl tuỳ ý trên mssql (sql server 2022), nhớ các thông số kết nối: ip, port, username, password, db_name, table_name
 1.1.Tạo data và bảng
 <img width="1017" height="222" alt="image" src="https://github.com/user-attachments/assets/5b3a8005-fc47-4f2a-8c17-304c3e546f73" />
-1.2 cài đặt trong node-red
+# 2.4. cài đặt trong node-red
 Mở node-red
 <img width="882" height="636" alt="image" src="https://github.com/user-attachments/assets/230e82df-cddb-48a8-abb2-b333cdc52a25" />
-1.3 
+ Khi đó nodered sẽ yêu cầu nhập mật khẩu mới vào được giao diện cho admin
+<img width="1671" height="777" alt="image" src="https://github.com/user-attachments/assets/1cfbf5db-9485-4045-8156-99202ac45680" />
+# 2.5 tạo api back-end bằng nodered
+tại flow1 trên nodered, sử dụng node `http in` và `http response` để tạo api
+- thêm node `MSSQL` để truy vấn tới cơ sở dữ liệu
+- logic flow sẽ gồm 4 node theo thứ tự sau (thứ tự nối dây):
+- 1. http in  : dùng GET cho đơn giản, URL đặt tuỳ ý, ví dụ: /timkiem
+  2. function : để tiền xử lý dữ liệu gửi đến
+  3. MSSQL: để truy vấn dữ liệu tới CSDL, nhận tham số từ node tiền xử lý
+  4. http response: để phản hồi dữ liệu về client: Status Code=200, Header add : Content-Type = application/json
+  5.mở chạy http://localhost:1880/phongtro
+<img width="1211" height="704" alt="image" src="https://github.com/user-attachments/assets/35bcb5e8-eb75-47a3-b69f-aae8aaeec76c" />
+Kết quả:
+<img width="1700" height="736" alt="image" src="https://github.com/user-attachments/assets/30d580dc-da96-487b-8a23-8c24eea63e7a" />
+2.6. Tạo giao diện front-end
+     Tất cả 3 file này đặt trong thư mục: `F:\Apache24\fullname`
+     <img width="1148" height="442" alt="image" src="https://github.com/user-attachments/assets/ac3eb16a-ca43-4cb2-ae17-a5490ee784b9" />
+
+     <img width="1237" height="640" alt="image" src="https://github.com/user-attachments/assets/d568af6a-6e71-4a4a-b0bb-3bc4fc9e9e5a" />
+lấy dữ liệu trên form, gửi đến api nodered đã làm ở bước 2.5, nhận về json, dùng json trả về để tạo giao diện phù hợp với kết quả truy vấn của bạn
+<img width="1065" height="666" alt="image" src="https://github.com/user-attachments/assets/3925808a-6552-4ecd-be3d-517319c1a701" />
+# 2.7. Nhận xét bài làm của mình
+# Apache:
+Cài để chạy web server trên máy Windows.
+Thư mục gốc (DocumentRoot) mặc định là htdocs.
+Có thể chạy trực tiếp (httpd.exe) hoặc đăng ký làm service để tự động khởi động cùng Windows.
+Cần kiểm tra port 80 không bị trùng với các phần mềm khác.
+# Node-RED:
+Cài đặt qua Node.js.
+Dùng để tạo back-end API mà không cần viết nhiều code server phức tạp.
+Có thể kéo thả các node: http in, function, MSSQL, http response để tạo luồng xử lý dữ liệu.
+Thư viện bổ trợ:
+MSSQL node kết nối SQL Server để truy vấn dữ liệu.
+Trình duyệt và JS để tương tác front-end → back-end.
+# Cách sử dụng Node-RED tạo API back-end
+Luồng cơ bản (Flow) gồm 4 node:
+http in → nhận request từ client (GET/POST).
+function → xử lý dữ liệu gửi đến, tạo câu lệnh SQL.
+MSSQL → truy vấn cơ sở dữ liệu, trả về kết quả.
+http response → gửi dữ liệu (JSON) về client.
+Test API:
+Truy cập http://localhost:1880/phongtro?tenphong=Phòng A1
+Nhận về JSON gồm thông tin phòng trọ tương ứng.
+# Cách front-end tương tác với back-end
+Front-end: HTML + CSS + JS (form nhập dữ liệu).
+Cách hoạt động:
+Người dùng nhập thông tin (ví dụ: “Phòng A1”) vào form
+JS (hauthanhhuyen.js) lấy dữ liệu và gọi API Node-RED bằng fetch.
+API trả về JSON.
+JS xử lý JSON và hiển thị kết quả trên giao diện HTML.
+CSS (hauthanhhuyen.css) giúp giao diện đẹp, dễ đọc và mang dấu ấn cá nhân.
+
 
 
 
