@@ -27,9 +27,9 @@ Chạy thành công
 <img width="736" height="166" alt="image" src="https://github.com/user-attachments/assets/def8ed8c-268d-4221-9f99-8aa3b32756d6" />
 1.2. Cài đặt 
 <img width="849" height="201" alt="image" src="https://github.com/user-attachments/assets/f215f1d3-d755-4acd-bdc5-564709b5dbd4" />
-1.3 tạo file "D:\nodejs\nodered\run-nodered.cmd" với nội dung (5 dòng sau):
+1.3 tạo file "F:\nodejs\nodered\run-nodered.cmd" với nội dung (5 dòng sau):
 <img width="772" height="203" alt="image" src="https://github.com/user-attachments/assets/638e3915-e068-4068-852b-0912f31b0d46" />
-1.4 Mở cmd, chuyển đến thư mục: `D:\nodejs\nodered`
+1.4 Mở cmd, chuyển đến thư mục: `F:\nodejs\nodered`
 <img width="870" height="715" alt="image" src="https://github.com/user-attachments/assets/62fb4ed3-cbb6-4914-a112-7459374cf87c" />
 Cài a1-nodered để chạy
 <img width="881" height="178" alt="image" src="https://github.com/user-attachments/assets/873ca420-9041-4e26-b03c-ea4e441f7671" />
@@ -37,10 +37,12 @@ Cài a1-nodered để chạy
 # 2.3. Tạo csdl tuỳ ý trên mssql (sql server 2022), nhớ các thông số kết nối: ip, port, username, password, db_name, table_name
 1.1.Tạo data và bảng
 <img width="1017" height="222" alt="image" src="https://github.com/user-attachments/assets/5b3a8005-fc47-4f2a-8c17-304c3e546f73" />
+<img width="897" height="385" alt="image" src="https://github.com/user-attachments/assets/127718b7-6834-4e76-b468-b4587c53da7b" />
+
 # 2.4. cài đặt trong node-red
 Mở node-red
 <img width="882" height="636" alt="image" src="https://github.com/user-attachments/assets/230e82df-cddb-48a8-abb2-b333cdc52a25" />
- Khi đó nodered sẽ yêu cầu nhập mật khẩu mới vào được giao diện cho admin
+Khi đó nodered sẽ yêu cầu nhập mật khẩu mới vào được giao diện cho admin
 <img width="1671" height="777" alt="image" src="https://github.com/user-attachments/assets/1cfbf5db-9485-4045-8156-99202ac45680" />
 # 2.5 tạo api back-end bằng nodered
 tại flow1 trên nodered, sử dụng node `http in` và `http response` để tạo api
