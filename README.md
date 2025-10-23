@@ -83,7 +83,7 @@ function → xử lý dữ liệu gửi đến, tạo câu lệnh SQL.
 MSSQL → truy vấn cơ sở dữ liệu, trả về kết quả.
 http response → gửi dữ liệu (JSON) về client.
 Test API:
-Truy cập http://localhost:1880/phongtro?tenphong=Phòng A1
+Truy cập http://hauthanhhuyen:1880/phongtro?tenphong=Phòng A1
 Nhận về JSON gồm thông tin phòng trọ tương ứng.
 # Cách front-end tương tác với back-end
 Front-end: HTML + CSS + JS (form nhập dữ liệu).
